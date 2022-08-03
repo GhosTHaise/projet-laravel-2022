@@ -25,8 +25,15 @@
                     <img class="img-fluid"  src="{{ asset('storage/Login-picture/illustration.png') }}" alt="...">
                 </div>
             </div>
-            <div class="bg-primary h-100 col-md-6">
+            <div class=" h-100 col-md-6">
                 {{-- right --}}
+                <form action="">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <button>Login</button>
+                </form>
             </div>
         </div>
     </div>
