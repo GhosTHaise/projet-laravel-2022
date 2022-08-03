@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
@@ -18,9 +19,7 @@ use App\Http\Controllers\PersonnelsController;
 |
 */
 
-Route::get('/', function () {
-    return view('blank');
-});
+Route::get('/',[LoginController::class,'index'])->name("login");
 
 Route::resource('clients', ClientsController::class);
 
@@ -37,9 +36,7 @@ Route::get('create-post', [PostsController::class, 'create'])->name('posts.creat
 
 Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 
-
-
-Route::get('/dash', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 

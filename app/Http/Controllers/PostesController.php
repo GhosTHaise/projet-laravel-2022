@@ -15,7 +15,7 @@ class PostesController extends Controller
     public function index()
     {
 
-        $postes =  Poste::find(4);
+        $postes =  Poste::findorFail(1);
         foreach($postes->personnels as $p) {
             echo $p->nom .'<br>'; 
         }

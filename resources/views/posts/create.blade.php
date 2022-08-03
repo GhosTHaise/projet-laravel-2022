@@ -1,7 +1,5 @@
 
-
-
-@extends('blank')
+@extends('layouts.wrapper')
 
 @section('main-content')
 
