@@ -27,12 +27,12 @@
             </div>
             <div class=" h-100 col-md-6">
                 {{-- right --}}
-                <form action="">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                    <button>Login</button>
+                <form  class="form-group d-flex  h-100 ml-4 px-5 flex-column justify-content-center align-item-center" action="">
+                    <label class="h5" for="username">Username</label>
+                    <input class="mb-4 form-control" type="text" name="username" id="username">
+                    <label class="h5" for="password">Password</label>
+                    <input class="mb-4 form-control" type="password" name="password" id="password">
+                    <button type="button" class="btn  btn-info rounded">Login</button>
                 </form>
             </div>
         </div>
