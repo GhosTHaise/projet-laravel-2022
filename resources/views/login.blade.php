@@ -17,22 +17,22 @@
 <body class="h-100">
     <div class="container-fluid h-100 bg-light px-4 pt-4" >
         <div class="row h-100">
-            <div class="bg-light h-100 col-md-6 flex ">
+            <div class="bg-light h-100 col-md-6 d-flex flex-column   ">
                 <div class="h-25 w-100">
                     <img class="" src="{{ asset('storage/Login-picture/logo.png') }}" alt="...">
                 </div>
-                <div class="d-flex px-4 justify-content-center">
+                <div class="d-flex w-100 px-4  justify-content-center">
                     <img class="img-fluid"  src="{{ asset('storage/Login-picture/illustration.png') }}" alt="...">
                 </div>
             </div>
             <div class=" h-100 col-md-6">
                 {{-- right --}}
-                <form  class="form-group d-flex  h-100 ml-4 px-5 flex-column justify-content-center align-item-center" action="">
+                <form  class="form-group d-flex  h-100 ml-4 px-3 flex-column justify-content-center align-item-center" action="">
                     <label class="h5" for="username">Username</label>
                     <input class="mb-4 form-control" type="text" name="username" id="username">
                     <label class="h5" for="password">Password</label>
                     <input class="mb-4 form-control" type="password" name="password" id="password">
-                    <button type="button" class="btn  btn-info rounded">Login</button>
+                    <button type="button" class="btn  btn-outline-info rounded">Login</button>
                 </form>
             </div>
         </div>
