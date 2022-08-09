@@ -8,6 +8,7 @@
 </p>
 
 ## Projet Laravel 2022
+Initialisez le projet avec :
 ```
 npm install
 ```
