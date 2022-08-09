@@ -8,7 +8,7 @@
 </p>
 
 ## Projet Laravel 2022
-``shell
+```
 npm install
 ```
 
