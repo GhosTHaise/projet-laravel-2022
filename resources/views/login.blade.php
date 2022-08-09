@@ -28,7 +28,7 @@
             <div class=" h-100 col-md-6">
                 {{-- right --}}
                 <form  class="form-group d-flex  h-100 ml-4 px-3 flex-column justify-content-center align-item-center" action="">
-                    <label class="h5" for="username">Username</label>
+                    <label class="h5" for="email">Username</label>
                     <input class="mb-4 form-control" type="text" name="username" id="username">
                     <label class="h5" for="password">Password</label>
                     <input class="mb-4 form-control" type="password" name="password" id="password">

@@ -7,6 +7,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\PersonnelsController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ use App\Http\Controllers\PersonnelsController;
 |
 */
 
-Route::get('/',[LoginController::class,'index'])->name("login");
+Route::get('/', [AuthenticatedSessionController::class, 'create'])
+->name('login');
 
 Route::resource('clients', ClientsController::class);
 
