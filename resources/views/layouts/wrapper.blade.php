@@ -19,6 +19,27 @@
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="{{ asset('css/bracket.css') }}">
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui/ui/widgets/datepicker.js') }}"></script>
+    <script src="{{ asset('js/perfect-scrollbar.min.js') }}" ></script>
+    <script src="{{ asset('js/moment.min.js') }}" ></script>
+    <script src="{{ asset('js/rickshaw/vendor/d3.min.js')}}"></script>
+    <script src="{{ asset('js/rickshaw/vendor/d3.layout.min.js')}}"></script>
+    <script src="{{ asset('js/rickshaw/rickshaw.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.flot/jquery.flot.js')}}"></script>
+    <script src="{{ asset('js/jquery.flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{ asset('js/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{ asset('js/echarts/echarts.min.js')}}"></script>
+    <script src="{{ asset('js/select2/js/select2.full.min.js')}}"></script>
+    
+    <script src="{{ asset('js/datepicker.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+    
+    
+    <script src="{{ asset('js/ResizeSensor.js') }}" defer></script>
+    <script src="{{ asset('js/bracket.js') }}" defer></script>
   </head>
 
   <body>
@@ -251,7 +272,12 @@
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
-                <li><a href="#"><i class="icon ion-power"></i> Sign Out</a></li>
+                <li>
+                  <form action="{{route('logout')}}" method="post">
+                    @csrf
+                  <a :href="route('logout')"
+                  onclick="event.preventDefault();
+                              this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></form></li>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
@@ -294,14 +320,7 @@
     <!-- ########## END: MAIN PANEL ########## -->
 
     
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/datepicker.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.peity.min.js') }}"></script>
 
-    <script src="{{ asset('js/bracket.js') }}"></script>
   </body>
 
 </html>
