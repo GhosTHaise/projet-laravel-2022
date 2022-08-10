@@ -98,7 +98,7 @@
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
         <div class="input-group hidden-xs-down wd-170 transition">
-          <input id="searchbox" type="text" class="form-control d-none" placeholder="Search">
+          <input id="searchbox" type="text" class="form-control" placeholder="Search">
           <span class="input-group-btn">
             <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
           </span>
@@ -251,9 +251,6 @@
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
-                <li><a href="#"><i class="icon ion-ios-download"></i> Downloads</a></li>
-                <li><a href="#"><i class="icon ion-ios-star"></i> Favorites</a></li>
-                <li><a href="#"><i class="icon ion-ios-folder"></i> Collections</a></li>
                 <li><a href="#"><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>
             </div><!-- dropdown-menu -->
@@ -270,12 +267,12 @@
     <div class="br-mainpanel">
       <div class="br-pageheader">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
-          <a class="breadcrumb-item" href="index-2.html">ERP ENTREPRISE</a>
+          <a class="breadcrumb-item" href="/">ERP ENTREPRISE</a>
           <span class="breadcrumb-item active">@yield('page-title')</span>
         </nav>
       </div><!-- br-pageheader -->
       <div class="br-pagetitle">
-        <i class="icon icon ion-ios-book-outline"></i>
+        @yield('page-logo')
         <div>
           <h4>@yield('page-title')</h4>
           <p class="mg-b-0">@yield('page-description')</p>
