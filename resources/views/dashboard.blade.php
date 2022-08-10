@@ -31,6 +31,8 @@
 
     
   {{--Headlines --}}
+  <script src="{{ asset('js/jquery.peity.min.js') }}" defer></script>
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
   <div class="br-pagebody">
     <div class="row row-sm">
       <div class="col-sm-6 col-xl-3">
