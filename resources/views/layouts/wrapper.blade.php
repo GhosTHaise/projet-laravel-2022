@@ -94,8 +94,12 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Demander congé</a></li>
-            <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Liste congé</a></li>
-            <li class="sub-item"><a href="card-social.html" class="sub-link">Valider congé</a></li>
+            
+            //Affichena ra admin
+            @can('access-admin')
+                 <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Liste congé</a></li>
+                 <li class="sub-item"><a href="card-social.html" class="sub-link">Valider congé</a></li>
+            @endcan
           </ul>
         </li>
         <li class="br-menu-item">
@@ -257,15 +261,15 @@
           </div><!-- dropdown -->
           <div class="dropdown">
             <a href="#" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name hidden-md-down">Moi</span>
+              <span class="logged-name hidden-md-down">{{Auth::user()->name}}</span>
               <img src="../img/img1.jpg" class="wd-32 rounded-circle" alt="">
               <span class="square-10 bg-success"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-250">
               <div class="tx-center">
                 <a href="#"><img src="../img/img1.jpg" class="wd-80 rounded-circle" alt=""></a>
-                <h6 class="logged-fullname">Moi</h6>
-                <p>moi@domain.com</p>
+                <h6 class="logged-fullname">{{Auth::user()->name}}</h6>
+                <p>{{Auth::user()->email}}</p>
               </div>
               <hr>
               

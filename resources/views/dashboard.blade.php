@@ -32,7 +32,7 @@
     
   {{--Headlines --}}
   <script src="{{ asset('js/jquery.peity.min.js') }}" defer></script>
-    <script src="{{ asset('js/dashboard.js') }}" defer></script>
+  <script src="{{ asset('js/dashboard.js') }}" defer></script>
   <div class="br-pagebody">
     <div class="row row-sm">
       <div class="col-sm-6 col-xl-3">
@@ -81,7 +81,7 @@
             <div class="mg-l-20">
               <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Bounce Rate</p>
               <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">32.16%</p>
-              <span class="tx-11 tx-roboto tx-white-8">65.45% on average time</span>
+              <span class="tx-11 tx-roboto tx-white-8">65.45% on average</span>
             </div>
           </div>
           <div id="ch4" class="ht-50 tr-y-1"></div>

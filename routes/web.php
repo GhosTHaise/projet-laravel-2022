@@ -34,7 +34,7 @@ Route::resource('postes', PostesController::class);
 
 Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
 
-Route::get('create-post', [PostsController::class, 'create'])->name('posts.create');
+Route::get('create-post', [PostsController::class, 'create'])->name('posts.create')->middleware('can:access-admin');
 
 Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 
