@@ -19,9 +19,6 @@
 
 @extends('layouts.wrapper')
 {{-- Titre page --}}
-@section('page-title')
-    Dashboard
-@endSection
 {{-- Logo page --}}
 @section('page-logo')
     <i class="icon ion-ios-home-outline"></i>

@@ -50,7 +50,7 @@
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
         <li class="br-menu-item">
-          <a href={{Route("posts.create")}} class="br-menu-link">
+          <a href={{Route("dashboard")}} class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
             <span class="menu-item-label">TABLEAU DE BORD</span>
           </a><!-- br-menu-link -->
@@ -82,7 +82,7 @@
             <span class="menu-item-label">POSTES</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Nouveau poste</a></li>
+            <li class="sub-item"><a href={{Route("posts.create")}} class="sub-link">Nouveau poste</a></li>
             <li class="sub-item"><a href="card-social.html" class="sub-link">Liste poste</a></li>
           </ul>
         </li>
@@ -95,7 +95,6 @@
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Demander congé</a></li>
             
-            //Affichena ra admin
             @can('access-admin')
                  <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Liste congé</a></li>
                  <li class="sub-item"><a href="card-social.html" class="sub-link">Valider congé</a></li>
@@ -103,7 +102,7 @@
           </ul>
         </li>
         <li class="br-menu-item">
-          <a href="mailbox.html" class="br-menu-link">
+          <a href="{{Route("mailbox")}}" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
             <span class="menu-item-label">MESSAGES</span>
           </a><!-- br-menu-link -->
@@ -276,12 +275,12 @@
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
-                <li>
-                  <form action="{{route('logout')}}" method="post">
-                    @csrf
+                 <form action="{{route('logout')}}" method="post">
+                  @csrf
+                <li style="cursor: pointer">
                   <a :href="route('logout')"
                   onclick="event.preventDefault();
-                              this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></form></li>
+                              this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></li></form>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
@@ -298,7 +297,7 @@
       <div class="br-pageheader">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
           <a class="breadcrumb-item" href="/">ERP ENTREPRISE</a>
-          <span class="breadcrumb-item active">@yield('page-title')</span>
+          <span class="breadcrumb-item active">{{ $page_title ?? ""}}</span>
         </nav>
       </div><!-- br-pageheader -->
       <div class="br-pagetitle">

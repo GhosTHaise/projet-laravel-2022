@@ -6,6 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\PersonnelsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -45,9 +47,8 @@ Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+Route::get("/mailbox",[MessagesController::class,"index"])->middleware(['auth'])->name("mailbox");
+Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

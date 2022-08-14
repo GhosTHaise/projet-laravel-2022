@@ -17,7 +17,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-
+        if(Auth::check()){
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
         return view('auth.login');
     }
 
