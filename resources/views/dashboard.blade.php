@@ -159,52 +159,6 @@
           </div><!-- row -->
         </div><!-- card -->
 
-        <div class="card shadow-base bd-0 pd-25 mg-t-20">
-          <div class="d-md-flex justify-content-between align-items-center">
-            <div>
-              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Delivery Overview</h6>
-              <p class="mg-b-0">Past 30 Days — Last Updated Oct 20, 2017</p>
-            </div>
-            <div class="wd-200 mg-t-20 mg-md-t-0">
-              <select class="form-control select2" data-placeholder="Choose location">
-                <option label="Choose one"></option>
-                <option value="1" selected>New York</option>
-                <option value="2">San Francisco</option>
-                <option value="3">Los Angeles</option>
-                <option value="4">Chicago</option>
-                <option value="5">Seattle</option>
-              </select>
-            </div><!-- wd-200 -->
-          </div><!-- d-flex -->
-
-          <div id="mapShiftWorker" class="ht-300 ht-sm-400 mg-t-25"></div>
-
-          <div class="row row-xs mg-t-25">
-            <div class="col-sm-4">
-              <div class="tx-center pd-y-15 bd">
-                <p class="mg-b-5 tx-uppercase tx-10 tx-mont tx-semibold">New Deliveries</p>
-                <h4 class="tx-lato tx-inverse tx-bold mg-b-0">12,344</h4>
-                <span class="tx-12 tx-danger tx-roboto">2.7% increased</span>
-              </div>
-            </div><!-- col-4 -->
-            <div class="col-sm-4 mg-t-20 mg-sm-t-0">
-              <div class="tx-center pd-y-15 bd">
-                <p class="mg-b-5 tx-uppercase tx-10 tx-mont tx-semibold">Delivered</p>
-                <h4 class="tx-lato tx-inverse tx-bold mg-b-0">24,333</h4>
-                <span class="tx-12 tx-danger tx-roboto">2.7% decreased</span>
-              </div>
-            </div><!-- col-4 -->
-            <div class="col-sm-4 mg-t-20 mg-sm-t-0">
-              <div class="tx-center pd-y-15 bd">
-                <p class="mg-b-5 tx-uppercase tx-10 tx-mont tx-semibold">Returned</p>
-                <h4 class="tx-lato tx-inverse tx-bold mg-b-0">432</h4>
-                <span class="tx-12 tx-success tx-roboto">2.7% decreased</span>
-              </div>
-            </div><!-- col-4 -->
-          </div><!-- row -->
-
-        </div><!-- card -->
-
 
       </div><!-- col-8 -->
       <div class="col-lg-4 mg-t-20 mg-lg-t-0">
@@ -295,25 +249,6 @@
               <li data-target="#carousel12" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <div class="bg-br-primary pd-30 ht-300 pos-relative d-flex align-items-center rounded">
-                  <div class="pos-absolute t-20 r-20">
-                    <a href="#" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
-                    <a href="#" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
-                    <a href="#" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
-                    <a href="#" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
-                  </div>
-                  <div class="tx-white">
-                    <p class="tx-uppercase tx-11 tx-semibold tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
-                    <h5 class="lh-5 mg-b-20">20 Best Travel Tips After 5 Years Of Traveling The World</h5>
-                    <nav class="nav flex-row tx-13">
-                      <a href="#" class="tx-white-8 hover-white pd-l-0 pd-r-5">12K+ Views</a>
-                      <a href="#" class="tx-white-8 hover-white pd-x-5">234 Shares</a>
-                      <a href="#" class="tx-white-8 hover-white pd-x-5">43 Comments</a>
-                    </nav>
-                  </div>
-                </div><!-- d-flex -->
-              </div>
               <div class="carousel-item">
                 <div class="bg-info pd-30 ht-300 pos-relative d-flex align-items-center rounded">
                   <div class="pos-absolute t-20 r-20">
@@ -357,23 +292,7 @@
         </div><!-- card -->
 
         <div class="card bg-danger bd-0 mg-t-20">
-          <div class="pd-x-25 pd-t-25">
-            <h6 class="tx-13 tx-uppercase tx-white tx-medium tx-spacing-1 mg-b-10">Monthly Statistics</h6>
-            <p class="mg-b-20 tx-white-6">Past 30 Days — Last Updated Oct 14, 2017</p>
-            <div class="row row-sm mg-t-20">
-              <div class="col">
-                <p class="mg-b-5 tx-uppercase tx-10 tx-mont tx-semibold tx-white-6">Bounce Rate</p>
-                <h4 class="tx-lato tx-white tx-bold tx-normal mg-b-0">23.32%</h4>
-                <span class="tx-12 tx-white-6 tx-roboto">2.7% increased</span>
-              </div><!-- col -->
-              <div class="col">
-                <p class="mg-b-5 tx-uppercase tx-10 tx-mont tx-semibold tx-white-6">Page Views</p>
-                <h4 class="tx-lato tx-white tx-normal mg-b-0">42.58%</h4>
-                <span class="tx-12 tx-white-6 tx-roboto">1.5% decreased</span>
-              </div><!-- col -->
-            </div><!-- row -->
-            <div id="ch13" class="ht-160"></div>
-          </div><!-- pd-x-25 -->
+          
         </div><!-- card -->
 
       </div><!-- col-4 -->
