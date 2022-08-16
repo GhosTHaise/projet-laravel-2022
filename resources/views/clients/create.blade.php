@@ -1,4 +1,4 @@
-@extends('blank')
+@extends('layouts.wrapper')
 
 @section('page-title', 'Ajout client');
 @section('page-description', 'Gestion de client');
@@ -7,8 +7,8 @@
 
 <div class="br-pagebody">
     <div class="br-section-wrapper">
-      <h6 class="br-section-label">Basic Form Input</h6>
-      <p class="br-section-text">A basic form control with disabled and readonly mode.</p>
+      <h6 class="br-section-label">Veuillez entrer les informations concernant le nouveau client </h6>
+      {{-- <p class="br-section-text">A basic form control with disabled and readonly mode.</p> --}}
 
       <form action="{{ route('clients.store') }}" method="post">
         @csrf

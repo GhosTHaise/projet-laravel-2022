@@ -29,6 +29,7 @@ class PersonnelsController extends Controller
     public function create()
     {
         //
+        return view('personnels.create');
     }
 
     /**
@@ -40,6 +41,24 @@ class PersonnelsController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nom' =>  'required',
+            'poste' =>  'required'   
+        ]);
+        $nom =  $request->nom;
+        $poste =  $request->poste;
+
+
+        Personnel::create([
+            'nom' => $nom,
+            'post_id' => $poste,
+        ]);
+        
+        session()->flash('success');
+
+
+        return redirect()->route('personels.index');
+
     }
 
     /**
