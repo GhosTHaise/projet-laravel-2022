@@ -35,11 +35,11 @@
       <div class="col-sm-6 col-xl-3">
         <div class="bg-info rounded overflow-hidden">
           <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
+            <i class="ion ion-briefcase tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
-              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Today's Visits</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">1,975,224</p>
-              <span class="tx-11 tx-roboto tx-white-8">24% higher yesterday</span>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Clients</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">1,9</p>
+              <span class="tx-11 tx-roboto tx-white-8">Nombres de clients</span>
             </div>
           </div>
           <div id="ch1" class="ht-50 tr-y-1"></div>
@@ -48,11 +48,11 @@
       <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
         <div class="bg-purple rounded overflow-hidden">
           <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-            <i class="ion ion-bag tx-60 lh-0 tx-white op-7"></i>
+            <i class="ion ion-person tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
-              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Today Sales</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">$329,291</p>
-              <span class="tx-11 tx-roboto tx-white-8">$390,212 before tax</span>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Personnels</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">14</p>
+              <span class="tx-11 tx-roboto tx-white-8">Nombres de personnels</span>
             </div>
           </div>
           <div id="ch3" class="ht-50 tr-y-1"></div>
@@ -63,9 +63,9 @@
           <div class="pd-x-20 pd-t-20 d-flex align-items-center">
             <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
-              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">% Unique Visits</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">54.45%</p>
-              <span class="tx-11 tx-roboto tx-white-8">23% average duration</span>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Postes</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">5</p>
+              <span class="tx-11 tx-roboto tx-white-8">Nombres de postes</span>
             </div>
           </div>
           <div id="ch2" class="ht-50 tr-y-1"></div>
