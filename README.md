@@ -9,6 +9,9 @@
 
 ## Projet Laravel 2022
 Initialisez le projet avec :
+```shell
+composer install
+```
 ```
 npm install
 ```
