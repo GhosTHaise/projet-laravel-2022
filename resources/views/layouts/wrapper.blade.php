@@ -58,7 +58,7 @@
         
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <i class="menu-item-icon icon ion-ios-person-outline tx-20"></i>
             <span class="menu-item-label">PERSONNEL</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
@@ -68,7 +68,7 @@
         </li>
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <i class="menu-item-icon icon ion-ios-briefcase-outline tx-20"></i>
             <span class="menu-item-label">CLIENTS</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
@@ -82,14 +82,16 @@
             <span class="menu-item-label">POSTES</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href={{Route("posts.create")}} class="sub-link">Nouveau poste</a></li>
+            @can("access-admin")
+                <li class="sub-item"><a href={{Route("posts.create")}} class="sub-link">Nouveau poste</a></li>
+            @endcan
             <li class="sub-item"><a href="card-social.html" class="sub-link">Liste poste</a></li>
           </ul>
         </li>
 
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <i class="menu-item-icon icon ion-ios-calendar-outline tx-20"></i>
             <span class="menu-item-label">CONGES</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
@@ -124,7 +126,7 @@
         <div class="input-group hidden-xs-down wd-170 transition">
           <input id="searchbox" type="text" class="form-control" placeholder="Search">
           <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+            <button class="btn btn-secondary" type="button"><i class="ion-search tx-30"></i></button>
           </span>
         </div><!-- input-group -->
       </div><!-- br-header-left -->
