@@ -6,7 +6,7 @@
     <div class="br-section-wrapper">
       <h6 class="br-section-label">Veuillez remplir les informations concernants le nouveau employée</h6>
       {{-- <p class="br-section-text">A basic form control with disabled and readonly mode.</p> --}}
-      <form action="{{ route('personnels.store') }}" method="post">
+      <form action="{{ route('emp.store') }}" method="post">
         @csrf
         <div class="row">
           <div class="col-lg">

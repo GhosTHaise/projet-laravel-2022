@@ -51,13 +51,11 @@ class PersonnelsController extends Controller
 
         Personnel::create([
             'nom' => $nom,
-            'post_id' => $poste,
+            'poste_id' => $poste,
         ]);
-        
-        session()->flash('success');
 
 
-        return redirect()->route('personels.index');
+        return redirect()->route('personnels.index');
 
     }
 
@@ -81,6 +79,8 @@ class PersonnelsController extends Controller
     public function edit($id)
     {
         //
+        $personnels = Personnel::find($id);
+        return view('personnels.edit',compact('personnels'));
     }
 
     /**
@@ -93,6 +93,16 @@ class PersonnelsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $emp = Personnel::find($id);
+
+        $nom =  $request->nom;
+        $poste_id =  $request->poste_id;
+
+        $emp->update(['nom' => $nom, 'poste_id' => $poste_id]);
+
+        return redirect()->route('emp.index');
+
+
     }
 
     /**
@@ -104,5 +114,7 @@ class PersonnelsController extends Controller
     public function destroy($id)
     {
         //
+        Personnel::find($id)->delete();
+        return redirect()->route('emp.index');
     }
 }

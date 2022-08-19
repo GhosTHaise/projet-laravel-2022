@@ -28,7 +28,7 @@ Route::get('/', [AuthenticatedSessionController::class, 'create'])
 Route::resource('clients', ClientsController::class);
 
 
-Route::resource('personnels', PersonnelsController::class);
+Route::resource('emp', PersonnelsController::class);
 
 
 Route::resource('postes', PostesController::class);
