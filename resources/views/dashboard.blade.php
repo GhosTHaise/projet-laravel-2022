@@ -38,7 +38,7 @@
             <i class="ion ion-briefcase tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
               <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Clients</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">1,9</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{$nombre_client ?? 0}}</p>
               <span class="tx-11 tx-roboto tx-white-8">Nombres de clients</span>
             </div>
           </div>
@@ -51,7 +51,7 @@
             <i class="ion ion-person tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
               <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Personnels</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">14</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{$nombre_personnel ?? 0}}</p>
               <span class="tx-11 tx-roboto tx-white-8">Nombres de personnels</span>
             </div>
           </div>
@@ -64,7 +64,7 @@
             <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
             <div class="mg-l-20">
               <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Postes</p>
-              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">5</p>
+              <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{$nombre_poste ?? 0}}</p>
               <span class="tx-11 tx-roboto tx-white-8">Nombres de postes</span>
             </div>
           </div>
