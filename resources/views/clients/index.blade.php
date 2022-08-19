@@ -1,4 +1,4 @@
-@extends('blank')
+@extends('layouts.wrapper')
 
 @section('page-title', 'Ajout client')
 @section('page-description', 'Gestion de client')
