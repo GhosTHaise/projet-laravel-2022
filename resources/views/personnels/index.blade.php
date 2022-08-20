@@ -4,7 +4,7 @@
 
 <div class="br-pagebody">
     <div class="br-section-wrapper">
-      <h6 class="br-section-label">TABLE PERSONNEL</h6>
+      <h6 class="br-section-label">LISTE PERSONNEL</h6>
       <p class="br-section-text">Information concernant les personnels.</p>
       <a href="{{route('emp.create')}}" class="btn btn-success btn-sm mr-2 " style="margin-bottom: 30px;float:right">Ajouter un nouveau employe</a>
 
