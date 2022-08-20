@@ -25,13 +25,13 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
 ->name('login');
 
-Route::resource('clients', ClientsController::class);
+Route::resource('clients', ClientsController::class)->middleware(['auth']);
 
 
-Route::resource('emp', PersonnelsController::class);
+Route::resource('emp', PersonnelsController::class)->middleware(['auth']);
 
 
-Route::resource('postes', PostesController::class);
+Route::resource('postes', PostesController::class)->middleware(['auth']);
 
 
 Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');

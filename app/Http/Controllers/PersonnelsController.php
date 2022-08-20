@@ -18,7 +18,10 @@ class PersonnelsController extends Controller
         $personnels = Personnel::all();
 
 
-        return view('personnels.index', compact('personnels'));
+        return view('personnels.index', [
+            "page_title" => "Liste personnels",
+            "personnels" => $personnels
+        ]);
     }
 
     /**
@@ -29,7 +32,9 @@ class PersonnelsController extends Controller
     public function create()
     {
         //
-        return view('personnels.create');
+        return view('personnels.create',[
+            "page_title" => "Nouveau personnel",
+        ]);
     }
 
     /**
