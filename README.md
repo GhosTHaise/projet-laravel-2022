@@ -15,8 +15,7 @@ composer install
 ```
 npm install
 ```
-#Creer un Administrateur par defaut
-Lancer la commande suivante :
+-> Creer un Administrateur par defaut avec :
 ```shell
     php artisan db:seed
 ```
