@@ -20,7 +20,7 @@ Lancer la commande suivante :
 ```shell
     php artisan db:seed
 ```
-ou si tous vos enregistrements déjà présents pour repartir d’une base vide
+ou si vous souhaitez supprimer tous vos enregistrements déjà présents pour repartir d’une base vide
 ```shell
     php artisan migrate:fresh --seed
 ```
