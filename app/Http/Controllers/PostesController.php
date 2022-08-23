@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Poste;
 use Illuminate\Http\Request;
 
 class PostesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
-        $postes =  Poste::findorFail(1);
-        foreach($postes->personnels as $p) {
-            echo $p->nom .'<br>'; 
-        }
+        $posts = Poste::all();
 
 
+        return view('posts.index', [
+            "posts" => $posts,
+        ]);
 
-        //return view('postes.index');
     }
 
     /**
@@ -32,7 +28,9 @@ class PostesController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create',[
+            "page_title" => "Creer un poste"
+        ]);
     }
 
     /**
@@ -42,8 +40,24 @@ class PostesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+
+        $request->validate([
+            'titre' =>  'required|min:5',
+        ]);
+
+
+        $titre =  $request->titre;
+        Poste::create([
+            'nom' => $titre,
+            'data_now' => Carbon::now(),
+        ]);
+
+
+        session()->flash('success');
+
+
+        return redirect()->route('postes.create');
     }
 
     /**
@@ -65,7 +79,11 @@ class PostesController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $client = Client::find($id);
+
+
+        return view('clients.edit', compact('client'));
     }
 
     /**
@@ -77,7 +95,16 @@ class PostesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+
+        $nom =  $request->nom;
+        $description =  $request->description;
+
+        $client->update(['nom' => $nom, 'description' => $description]);
+
+        return redirect()->route('clients.index');
+
+
     }
 
     /**
@@ -88,6 +115,7 @@ class PostesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::find($id)->delete();
+        return redirect()->route('clients.index');
     }
 }

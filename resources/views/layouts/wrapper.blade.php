@@ -83,9 +83,9 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             @can("access-admin")
-                <li class="sub-item"><a href={{Route("posts.create")}} class="sub-link">Nouveau poste</a></li>
+                <li class="sub-item"><a href={{Route("postes.create")}} class="sub-link">Nouveau poste</a></li>
             @endcan
-            <li class="sub-item"><a href="card-social.html" class="sub-link">Liste poste</a></li>
+            <li class="sub-item"><a href={{Route("postes.index")}} class="sub-link">Liste poste</a></li>
           </ul>
         </li>
 
