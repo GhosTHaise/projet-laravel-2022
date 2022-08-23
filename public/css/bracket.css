@@ -14031,8 +14031,9 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::
     border-top: 1px solid #dee2e6; }
 
 .br-mailbox-body {
+  transform: translateY(-65px);
   margin-top: 60px;
-  margin-left: 550px;
+  margin-left: 350px;
   transition: all 0.2s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
     .br-mailbox-body {
