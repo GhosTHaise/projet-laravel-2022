@@ -3,7 +3,7 @@
 @section('main-content')
 
 
-<div class="br-mailbox-list">
+<div class="br-mailbox-list" style="transform : translateX(-30px)" >
   <div class="br-mailbox-list-header">
     <a href="#" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up">
       <i class="fa fa-arrow-right"></i>
@@ -14,7 +14,7 @@
       <button type="button" class="btn btn-light pd-x-25"><i class="fa fa-angle-right"></i></button>
     </div>
   </div>
-  <div class="br-mailbox-list-body">
+  <div class="br-mailbox-list-body" >
     <div class="br-mailbox-list-item active">
       <div class="d-flex justify-content-between mg-b-5">
         <div>
