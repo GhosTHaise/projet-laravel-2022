@@ -35,7 +35,7 @@
                     @can("access-admin")
                     <td class="d-flex">
                       
-                        <a href="{{ route('clients.edit', $poste->id) }}" class="btn btn-warning btn-sm mr-2">Modifier</a>
+                        <a href="{{ route('postes.edit', $poste->id) }}" class="btn btn-warning btn-sm mr-2">Modifier</a>
 
                         <form method="post" action="{{ route('postes.destroy', $poste->id) }}" >
                             @csrf

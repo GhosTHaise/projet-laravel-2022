@@ -286,15 +286,12 @@
                   onclick="event.preventDefault();
                               this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></li></form>
               </ul>
-            </div><!-- dropdown-menu -->
-          </div><!-- dropdown -->
+            </div><
+          </div>
         </nav>
-      </div><!-- br-header-right -->
-    </div><!-- br-header -->
+      </div>
+    </div>
     <!-- ########## END: HEAD PANEL ########## -->
-
-    <!-- ########## START: RIGHT PANEL ########## -->
-    <!-- ########## END: RIGHT PANEL ########## --->
 
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
@@ -303,14 +300,14 @@
           <a class="breadcrumb-item" href="/">ERP ENTREPRISE</a>
           <span class="breadcrumb-item active">{{ $page_title ?? ""}}</span>
         </nav>
-      </div><!-- br-pageheader -->
+      </div>
       <div class="br-pagetitle ml-4">
         @yield('page-logo')
         <div>
           <h4>@yield('page-title')</h4>
           <p class="mg-b-0">@yield('page-description')</p>
         </div>
-      </div><!-- d-flex -->
+      </div>
 
       <div class="br-pagebody">
 
@@ -322,8 +319,8 @@
         
           @yield('main-content')    
         
-      </div><!-- br-pagebody -->
-    </div><!-- br-mainpanel -->
+      </div>
+    </div>
     <!-- ########## END: MAIN PANEL ########## -->
 
     

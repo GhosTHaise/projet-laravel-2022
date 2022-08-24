@@ -1,6 +1,6 @@
 @extends('layouts.wrapper')
 
-@section('page-title', 'Ajout client');
+@section('page-title', 'Modification client');
 @section('page-description', 'Gestion de client');
 
 @section('main-content')

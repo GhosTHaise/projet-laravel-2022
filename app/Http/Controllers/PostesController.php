@@ -84,10 +84,10 @@ class PostesController extends Controller
     public function edit($id)
     {
 
-        $client = Client::find($id);
+        $poste = Poste::find($id);
 
 
-        return view('clients.edit', compact('client'));
+        return view('posts.edit', compact('poste'));
     }
 
     /**
@@ -99,14 +99,12 @@ class PostesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::find($id);
+        $poste = Poste::find($id);
 
-        $nom =  $request->nom;
-        $description =  $request->description;
+        $titre =  $request->titre;
+        $poste->update(['nom' => $titre]);
 
-        $client->update(['nom' => $nom, 'description' => $description]);
-
-        return redirect()->route('clients.index');
+        return redirect()->route('postes.index');
 
 
     }
