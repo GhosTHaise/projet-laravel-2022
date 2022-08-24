@@ -20,6 +20,7 @@ class PostesController extends Controller
 
         return view('posts.index', [
             "postes" => $liste_poste,
+            "page_title" => "Liste postes"
         ]);
 
     }
@@ -118,7 +119,7 @@ class PostesController extends Controller
      */
     public function destroy($id)
     {
-        Client::find($id)->delete();
+        Poste::find($id)->delete();
         return redirect()->route('clients.index');
     }
 }

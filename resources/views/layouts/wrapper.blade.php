@@ -62,7 +62,9 @@
             <span class="menu-item-label">PERSONNEL</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
+            @can("access-admin")
             <li class="sub-item"><a href="{{ route('emp.create') }}" class="sub-link">Nouveau personnel</a></li>
+            @endcan
             <li class="sub-item"><a href="{{ route('emp.index') }}" class="sub-link">Liste personnel</a></li>
           </ul>
         </li>
@@ -302,7 +304,7 @@
           <span class="breadcrumb-item active">{{ $page_title ?? ""}}</span>
         </nav>
       </div><!-- br-pageheader -->
-      <div class="br-pagetitle">
+      <div class="br-pagetitle ml-4">
         @yield('page-logo')
         <div>
           <h4>@yield('page-title')</h4>
