@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Poste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostesController extends Controller
 {
 
     public function index()
     {
-
-        $posts = Poste::all();
-
+        $liste_poste = DB::table("postes")
+        ->leftjoin("personnels","postes.id","=","personnels.poste_id")
+        ->selectRaw("postes.*,count(personnels.poste_id) as nombres_personnels")
+        ->groupBy('postes.id')
+        ->get();
 
         return view('posts.index', [
-            "posts" => $posts,
+            "postes" => $liste_poste,
         ]);
 
     }
