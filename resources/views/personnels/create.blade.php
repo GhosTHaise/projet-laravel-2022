@@ -18,7 +18,11 @@
             @enderror
           </div><!-- col -->
           <div class="col-lg mg-t-10 mg-lg-t-0">
-            <input class="form-control" name="poste" placeholder="Entre le poste" type="number">
+            <select name="poste" class="form-control">
+              @foreach( $postes as $poste)
+                  <option value={{$poste->id}}">{{$poste->nom}}</option>
+              @endforeach
+            </select>
             @error('poste')
               <div class="invalid-feedback">
                 {{ $errors->first('poste') }}

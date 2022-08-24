@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poste;
 use App\Models\Personnel;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,10 @@ class PersonnelsController extends Controller
     public function create()
     {
         //
+        $list_poste = Poste::all();
         return view('personnels.create',[
             "page_title" => "Nouveau personnel",
+            "postes" => $list_poste
         ]);
     }
 
@@ -52,15 +55,15 @@ class PersonnelsController extends Controller
         ]);
         $nom =  $request->nom;
         $poste =  $request->poste;
-
+        
 
         Personnel::create([
             'nom' => $nom,
-            'poste_id' => $poste,
+            'poste_id' => (int)$poste,
         ]);
 
 
-        return redirect()->route('personnels.index');
+        return redirect()->route('emp.index');
 
     }
 
