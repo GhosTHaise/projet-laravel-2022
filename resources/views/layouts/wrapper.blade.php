@@ -275,7 +275,6 @@
                 <p>{{Auth::user()->email}}</p>
               </div>
               <hr>
-              
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
@@ -286,7 +285,7 @@
                   onclick="event.preventDefault();
                               this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></li></form>
               </ul>
-            </div><
+            </div>
           </div>
         </nav>
       </div>
@@ -312,8 +311,8 @@
       <div class="br-pagebody">
 
         @if(session()->has('success'))
-          <div class="alert alert-success" role="alert">
-            Insertion OK
+          <div class="alert alert-success mx-3" role="alert">
+              Les informations ont bien ete enregistre .
           </div>
         @endif
         

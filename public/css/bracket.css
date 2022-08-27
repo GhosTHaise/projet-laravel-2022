@@ -3952,7 +3952,7 @@ button.close {
 
 .modal {
   position: fixed;
-  top: 0;
+  top: 20%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -14031,7 +14031,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::
     border-top: 1px solid #dee2e6; }
 
 .br-mailbox-body {
-  transform: translateY(-65px);
+ /*  transform: translateY(-65px); */
   margin-top: 60px;
   margin-left: 350px;
   transition: all 0.2s ease-in-out; }

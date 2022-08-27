@@ -8,7 +8,9 @@
     <a href="#" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up">
       <i class="fa fa-arrow-right"></i>
     </a>
-    <h6 class="tx-inverse mg-b-0 tx-13 tx-uppercase">Inbox <span class="tx-roboto">(2)</span></h6>
+    <h6 class="tx-inverse mg-b-0 tx-13 tx-uppercase">
+      <a href="#" class="btn py-2 px-4 btn-teal bd-0 btn-compose" data-toggle="modal" data-target="#modalCompose"><i class="icon ion-ios-compose-outline mr-1"></i>Creer</a>
+      <span class="ml-2 tx-roboto">(2)</span></h6>
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-light disabled pd-x-25"><i class="fa fa-angle-left"></i></button>
       <button type="button" class="btn btn-light pd-x-25"><i class="fa fa-angle-right"></i></button>
@@ -163,7 +165,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content tx-size-sm">
         <div class="modal-header pd-x-20">
-          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Compose Message</h6>
+          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">NOuveau Message</h6>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

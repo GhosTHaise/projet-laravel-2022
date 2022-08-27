@@ -47,7 +47,7 @@ class PostesController extends Controller
     {   
 
         $request->validate([
-            'titre' =>  'required|min:5',
+            'titre' =>  'required|string|min:5|max:255',
         ]);
 
 
@@ -99,6 +99,11 @@ class PostesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+        $request->validate([
+            'titre' =>  'required|string|min:5|max:255',
+        ]);
+
         $poste = Poste::find($id);
 
         $titre =  $request->titre;
