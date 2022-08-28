@@ -12,8 +12,8 @@
       <a href="#" class="btn py-2 px-4 btn-teal bd-0 btn-compose" data-toggle="modal" data-target="#modalCompose"><i class="icon ion-ios-compose-outline  mr-2"></i>Creer</a>
       <span class="ml-2 tx-roboto">(2)</span></h6>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light disabled pd-x-25"><i class="fa fa-angle-left"></i></button>
-      <button type="button" class="btn btn-light pd-x-25"><i class="fa fa-angle-right"></i></button>
+      <button type="button" class="btn btn-light disabled pd-x-25"><i class="icon ion-chevron-left"></i></button>
+      <button type="button" class="btn btn-light pd-x-25"><i class="icon ion-chevron-right"></i></button>
     </div>
   </div>
   <div class="br-mailbox-list-body" >
@@ -174,13 +174,13 @@
         <div class="modal-body pd-20">
           <div class="form-group">
             <div class="input-group wd-sm-400 wd-lg-600">
-              <span class="input-group-addon wd-80 bg-gray-100">To:</span>
+              <span class="input-group-addon wd-80 bg-gray-100">A :</span>
               <input type="text" class="form-control" placeholder="Add recepient">
             </div><!-- input-group -->
           </div><!-- form-group -->
           <div class="form-group">
             <div class="input-group wd-sm-400 wd-lg-600">
-              <span class="input-group-addon wd-80 bg-gray-100">Subject:</span>
+              <span class="input-group-addon wd-80 bg-gray-100">Objet :</span>
               <input type="text" class="form-control" placeholder="Type subject">
             </div><!-- input-group -->
           </div><!-- form-group -->
@@ -189,7 +189,7 @@
           </div><!-- form-group -->
         </div><!-- modal-body -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-info">Send Message</button>
+          <button type="button" class="btn btn-info">Envoyer Message</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
