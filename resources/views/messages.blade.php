@@ -9,7 +9,7 @@
       <i class="fa fa-arrow-right"></i>
     </a>
     <h6 class="tx-inverse mg-b-0 tx-13 tx-uppercase">
-      <a href="#" class="btn py-2 px-4 btn-teal bd-0 btn-compose" data-toggle="modal" data-target="#modalCompose"><i class="icon ion-ios-compose-outline mr-1"></i>Creer</a>
+      <a href="#" class="btn py-2 px-4 btn-teal bd-0 btn-compose" data-toggle="modal" data-target="#modalCompose"><i class="icon ion-ios-compose-outline  mr-2"></i>Creer</a>
       <span class="ml-2 tx-roboto">(2)</span></h6>
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-light disabled pd-x-25"><i class="fa fa-angle-left"></i></button>
@@ -149,6 +149,7 @@
     <div class="row flex-row-reverse">
       <div class="col-md-9">
         <textarea class="form-control ht-150" placeholder="Click to write message"></textarea>
+        <button class="btn float-right text-12 h5 mt-4 py-3 px-4 btn-teal bd-0 btn-compose" type="submit">Envoyer</button>
       </div>
       <div class="col-md-3 mg-t-30 mg-md-t-0">
         <div class="ht-150 bd bd-dashed d-flex align-items-center justify-content-center rounded bg-gray-300">
@@ -165,7 +166,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content tx-size-sm">
         <div class="modal-header pd-x-20">
-          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">NOuveau Message</h6>
+          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Nouveau Message</h6>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
