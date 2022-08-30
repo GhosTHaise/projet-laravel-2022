@@ -308,10 +308,10 @@
         </div>
       </div>
 
-      <div class="br-pagebody fixed-bottom">
+      <div class="br-pagebody">
 
         @if(session()->has('success'))
-          <div class="alert alert-success mx-3" role="alert">
+          <div onclick="$(this).slideUp(300)" id="alert_status" style="cursor:pointer;position : fixed !important;z-index:10000;top:70px; right:0;" class="alert alert-success mx-3" role="alert">
               Les informations ont bien ete enregistre .
           </div>
         @endif
@@ -322,7 +322,6 @@
     </div>
     <!-- ########## END: MAIN PANEL ########## -->
 
-    
 
   </body>
 

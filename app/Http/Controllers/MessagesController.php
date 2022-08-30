@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessagesController extends Controller
 {
@@ -13,8 +14,11 @@ class MessagesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view("messages");
+    {   
+        $message = Post::where("email_destinataire","=",Auth::user()->email)->get();
+        return view("messages",[
+            "messages_dispo" => $message
+        ]);
     }
 
     /**
@@ -42,9 +46,11 @@ class MessagesController extends Controller
         ]);
 
         Post::create([
+            "id_sender" => Auth::user()->id,
             "content" => $request->content,
             "email_destinataire" => $request->email_dest,
-            "objet" => $request->objet
+            "objet" => $request->objet,
+            
         ]);
         session()->flash('success');
 
