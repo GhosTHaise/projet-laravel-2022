@@ -1,16 +1,15 @@
 @extends('layouts.wrapper')
 
-@section('page-title', 'Ajout client');
+@section('page-title', 'Modification client');
 @section('page-description', 'Gestion de client');
 
 @section('main-content')
 
 <div class="br-pagebody">
     <div class="br-section-wrapper">
-      <h6 class="br-section-label">Basic Form Input</h6>
-      <p class="br-section-text">A basic form control with disabled and readonly mode.</p>
+      <h6 class="br-section-label">Entrer les nouvelles infromations</h6>
 
-      <form action="{{ route('clients.update', $client->id) }}" method="post">
+      <form action="{{ route('clients.update', $client->id) }} " method="post">
         @csrf
         @method('PUT')
 

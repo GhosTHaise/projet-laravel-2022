@@ -6,7 +6,7 @@
     <div class="br-section-wrapper">
       <h6 class="br-section-label">Veuillez remplir les informations concernants le nouveau employée</h6>
       {{-- <p class="br-section-text">A basic form control with disabled and readonly mode.</p> --}}
-      <form action="{{ route('personnels.store') }}" method="post">
+      <form action="{{ route('emp.store') }}" method="post">
         @csrf
         <div class="row">
           <div class="col-lg">
@@ -18,7 +18,11 @@
             @enderror
           </div><!-- col -->
           <div class="col-lg mg-t-10 mg-lg-t-0">
-            <input class="form-control" name="poste" placeholder="Entre le poste" type="number">
+            <select name="poste" class="form-control">
+              @foreach( $postes as $poste)
+                  <option value={{$poste->id}}">{{$poste->nom}}</option>
+              @endforeach
+            </select>
             @error('poste')
               <div class="invalid-feedback">
                 {{ $errors->first('poste') }}

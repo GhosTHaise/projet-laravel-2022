@@ -62,8 +62,10 @@
             <span class="menu-item-label">PERSONNEL</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{ route('personnels.create') }}" class="sub-link">Nouveau personnel</a></li>
-            <li class="sub-item"><a href="{{ route('personnels.index') }}" class="sub-link">Liste personnel</a></li>
+            @can("access-admin")
+            <li class="sub-item"><a href="{{ route('emp.create') }}" class="sub-link">Nouveau personnel</a></li>
+            @endcan
+            <li class="sub-item"><a href="{{ route('emp.index') }}" class="sub-link">Liste personnel</a></li>
           </ul>
         </li>
         <li class="br-menu-item">
@@ -83,9 +85,9 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             @can("access-admin")
-                <li class="sub-item"><a href={{Route("posts.create")}} class="sub-link">Nouveau poste</a></li>
+                <li class="sub-item"><a href={{Route("postes.create")}} class="sub-link">Nouveau poste</a></li>
             @endcan
-            <li class="sub-item"><a href="card-social.html" class="sub-link">Liste poste</a></li>
+            <li class="sub-item"><a href={{Route("postes.index")}} class="sub-link">Liste poste</a></li>
           </ul>
         </li>
 
@@ -273,7 +275,6 @@
                 <p>{{Auth::user()->email}}</p>
               </div>
               <hr>
-              
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
@@ -284,15 +285,12 @@
                   onclick="event.preventDefault();
                               this.closest('form').submit();"><i class="icon ion-power"></i>{{ __('Log Out') }}</a></li></form>
               </ul>
-            </div><!-- dropdown-menu -->
-          </div><!-- dropdown -->
+            </div>
+          </div>
         </nav>
-      </div><!-- br-header-right -->
-    </div><!-- br-header -->
+      </div>
+    </div>
     <!-- ########## END: HEAD PANEL ########## -->
-
-    <!-- ########## START: RIGHT PANEL ########## -->
-    <!-- ########## END: RIGHT PANEL ########## --->
 
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
@@ -301,27 +299,27 @@
           <a class="breadcrumb-item" href="/">ERP ENTREPRISE</a>
           <span class="breadcrumb-item active">{{ $page_title ?? ""}}</span>
         </nav>
-      </div><!-- br-pageheader -->
-      <div class="br-pagetitle">
+      </div>
+      <div class="br-pagetitle ml-4">
         @yield('page-logo')
         <div>
           <h4>@yield('page-title')</h4>
           <p class="mg-b-0">@yield('page-description')</p>
         </div>
-      </div><!-- d-flex -->
+      </div>
 
       <div class="br-pagebody">
 
         @if(session()->has('success'))
-          <div class="alert alert-success" role="alert">
-            Insertion OK
+          <div class="alert alert-success mx-3" role="alert">
+              Les informations ont bien ete enregistre .
           </div>
         @endif
         
           @yield('main-content')    
         
-      </div><!-- br-pagebody -->
-    </div><!-- br-mainpanel -->
+      </div>
+    </div>
     <!-- ########## END: MAIN PANEL ########## -->
 
     

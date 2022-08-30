@@ -17,7 +17,10 @@ class ClientsController extends Controller
 
         $clients = Client::orderBy('id')->paginate(4);
 
-        return view('clients.index', compact('clients'));
+        return view('clients.index', [
+            "page_title" => "Listes Clients",
+            "clients" => $clients
+        ]);
     }
 
     /**
@@ -27,7 +30,10 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        return view('clients.create',[
+            "page_title" => "Nouveau Clients",
+        ]
+    );
     }
 
     /**

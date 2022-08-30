@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poste;
 use App\Models\Personnel;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,10 @@ class PersonnelsController extends Controller
         $personnels = Personnel::all();
 
 
-        return view('personnels.index', compact('personnels'));
+        return view('personnels.index', [
+            "page_title" => "Liste personnels",
+            "personnels" => $personnels
+        ]);
     }
 
     /**
@@ -29,7 +33,11 @@ class PersonnelsController extends Controller
     public function create()
     {
         //
-        return view('personnels.create');
+        $list_poste = Poste::all();
+        return view('personnels.create',[
+            "page_title" => "Nouveau personnel",
+            "postes" => $list_poste
+        ]);
     }
 
     /**
@@ -47,17 +55,15 @@ class PersonnelsController extends Controller
         ]);
         $nom =  $request->nom;
         $poste =  $request->poste;
-
+        
 
         Personnel::create([
             'nom' => $nom,
-            'post_id' => $poste,
+            'poste_id' => (int)$poste,
         ]);
-        
-        session()->flash('success');
 
 
-        return redirect()->route('personels.index');
+        return redirect()->route('emp.index');
 
     }
 
@@ -81,6 +87,8 @@ class PersonnelsController extends Controller
     public function edit($id)
     {
         //
+        $personnels = Personnel::find($id);
+        return view('personnels.edit',compact('personnels'));
     }
 
     /**
@@ -93,6 +101,16 @@ class PersonnelsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $emp = Personnel::find($id);
+
+        $nom =  $request->nom;
+        $poste_id =  $request->poste_id;
+
+        $emp->update(['nom' => $nom, 'poste_id' => $poste_id]);
+
+        return redirect()->route('emp.index');
+
+
     }
 
     /**
@@ -104,5 +122,7 @@ class PersonnelsController extends Controller
     public function destroy($id)
     {
         //
+        Personnel::find($id)->delete();
+        return redirect()->route('emp.index');
     }
 }

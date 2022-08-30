@@ -4,7 +4,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CongeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\MessagesController;
@@ -37,20 +36,20 @@ Route::get('liste',[ResponsableController::class, 'liste'])->name('conge.liste')
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
 ->name('login');
 
-Route::resource('clients', ClientsController::class);
+Route::resource('clients', ClientsController::class)->middleware(['auth']);
 
 
-Route::resource('personnels', PersonnelsController::class);
+Route::resource('emp', PersonnelsController::class)->middleware(['auth']);
 
 
-Route::resource('postes', PostesController::class);
+Route::resource('postes', PostesController::class)->middleware(['auth']);
 
 
-Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
+//Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
 
-Route::get('create-post', [PostsController::class, 'create'])->name('posts.create')->middleware('can:access-admin');
+//Route::get('create-post', [PostsController::class, 'create'])->name('posts.create')->middleware('can:access-admin');
 
-Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
+//Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');

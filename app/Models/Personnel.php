@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Personnel extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom', 'poste'];
+    protected $fillable = ['nom', 'poste_id'];
 
 
     public function poste()

@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Poste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
+        $liste_poste = DB::table("postes")
+        ->leftjoin("personnels","postes.id","=","personnels.poste_id")
+        ->selectRaw("postes.*,count(personnels.poste_id) as nombres_personnels")
+        ->groupBy('postes.id')
+        ->get();
 
-        $postes =  Poste::findorFail(1);
-        foreach($postes->personnels as $p) {
-            echo $p->nom .'<br>'; 
-        }
+        return view('posts.index', [
+            "postes" => $liste_poste,
+            "page_title" => "Liste postes"
+        ]);
 
-
-
-        //return view('postes.index');
     }
 
     /**
@@ -32,7 +32,9 @@ class PostesController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create',[
+            "page_title" => "Creer un poste"
+        ]);
     }
 
     /**
@@ -42,8 +44,24 @@ class PostesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+
+        $request->validate([
+            'titre' =>  'required|string|min:5|max:255',
+        ]);
+
+
+        $titre =  $request->titre;
+        Poste::create([
+            'nom' => $titre,
+            'data_now' => Carbon::now(),
+        ]);
+
+
+        session()->flash('success');
+
+
+        return redirect()->route('postes.create');
     }
 
     /**
@@ -65,7 +83,11 @@ class PostesController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $poste = Poste::find($id);
+
+
+        return view('posts.edit', compact('poste'));
     }
 
     /**
@@ -77,7 +99,19 @@ class PostesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'titre' =>  'required|string|min:5|max:255',
+        ]);
+
+        $poste = Poste::find($id);
+
+        $titre =  $request->titre;
+        $poste->update(['nom' => $titre]);
+
+        return redirect()->route('postes.index');
+
+
     }
 
     /**
@@ -88,6 +122,7 @@ class PostesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Poste::find($id)->delete();
+        return redirect()->route('clients.index');
     }
 }

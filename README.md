@@ -15,6 +15,14 @@ composer install
 ```
 npm install
 ```
+-> Creer un Administrateur par defaut avec :
+```shell
+    php artisan db:seed
+```
+ou si vous souhaitez supprimer tous vos enregistrements déjà présents pour repartir d’une base vide :
+```shell
+    php artisan migrate:fresh --seed
+```
 
 
 

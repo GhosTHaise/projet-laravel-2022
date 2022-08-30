@@ -22,13 +22,18 @@
         menuText.removeClass('op-lg-0-force');
         menuText.removeClass('d-lg-none');
       });
+      if($(".br-mailbox-list")){
+        $(".br-mailbox-list").css("left",260);
+      }
 
     } else {
       $('body').addClass('collapsed-menu');
 
       // hide toggled sub menu
       $('.show-sub + .br-menu-sub').slideUp();
-
+      if($(".br-mailbox-list")){
+        $(".br-mailbox-list").css("left",90);
+      }
       menuText.addClass('op-lg-0-force');
       $('.br-sideleft').one('transitionend', function(e) {
         menuText.addClass('d-lg-none');
@@ -56,6 +61,9 @@
         var menuText = $('.menu-item-label');
         menuText.removeClass('d-lg-none');
         menuText.removeClass('op-lg-0-force');
+        if($(".br-mailbox-list")){
+          $(".br-mailbox-list").css("left",260);
+        }
 
       } else {
         $('body').removeClass('expand-menu');
@@ -66,6 +74,9 @@
         var menuText = $('.menu-item-label');
         menuText.addClass('op-lg-0-force');
         menuText.addClass('d-lg-none');
+        if($(".br-mailbox-list")){
+          $(".br-mailbox-list").css("left",90);
+        }
       }
     }
   });
