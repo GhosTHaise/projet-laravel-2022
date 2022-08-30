@@ -44,7 +44,7 @@ Route::resource('emp', PersonnelsController::class)->middleware(['auth']);
 
 Route::resource('postes', PostesController::class)->middleware(['auth']);
 
-
+Route::resource("mailbox",MessagesController::class)->middleware(['auth']);
 //Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
 
 //Route::get('create-post', [PostsController::class, 'create'])->name('posts.create')->middleware('can:access-admin');
@@ -58,7 +58,7 @@ Route::resource('postes', PostesController::class)->middleware(['auth']);
 /* Route::get('/', function () {
     return view('welcome');
 }); */
-Route::get("/mailbox",[MessagesController::class,"index"])->middleware(['auth'])->name("mailbox");
+
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 
