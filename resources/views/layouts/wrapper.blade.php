@@ -106,7 +106,7 @@
           </ul>
         </li>
         <li class="br-menu-item">
-          <a href="{{Route("mailbox")}}" class="br-menu-link">
+          <a href="{{Route("mailbox.index")}}" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
             <span class="menu-item-label">MESSAGES</span>
           </a><!-- br-menu-link -->
@@ -308,7 +308,7 @@
         </div>
       </div>
 
-      <div class="br-pagebody">
+      <div class="br-pagebody fixed-bottom">
 
         @if(session()->has('success'))
           <div class="alert alert-success mx-3" role="alert">

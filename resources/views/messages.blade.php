@@ -164,35 +164,37 @@
 
   <div id="modalCompose" class="modal fade">
     <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content tx-size-sm">
+      <form action={{Route("mailbox.store")}} method="POST" class="modal-content tx-size-sm">
+        @csrf
         <div class="modal-header pd-x-20">
           <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Nouveau Message</h6>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body pd-20">
+        <div  class="modal-body pd-20">
+         
           <div class="form-group">
             <div class="input-group wd-sm-400 wd-lg-600">
               <span class="input-group-addon wd-80 bg-gray-100">A :</span>
-              <input type="text" class="form-control" placeholder="Add recepient">
+              <input type="text" name="email_dest" class="form-control" placeholder="Add recepient">
             </div><!-- input-group -->
           </div><!-- form-group -->
           <div class="form-group">
             <div class="input-group wd-sm-400 wd-lg-600">
               <span class="input-group-addon wd-80 bg-gray-100">Objet :</span>
-              <input type="text" class="form-control" placeholder="Type subject">
+              <input type="text" name="objet" class="form-control" placeholder="Type subject">
             </div><!-- input-group -->
           </div><!-- form-group -->
           <div class="form-group mg-b-0">
-            <textarea class="form-control" rows="6" placeholder="Type your message"></textarea>
+            <textarea class="form-control" name="content" rows="6" placeholder="Type your message"></textarea>
           </div><!-- form-group -->
         </div><!-- modal-body -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-info">Envoyer Message</button>
+          <button type="submit" class="btn btn-info">Envoyer Message</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
-      </div>
+      </form>
     </div><!-- modal-dialog -->
   </div><!-- modal -->
 
