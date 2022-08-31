@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class MessagesController extends Controller
@@ -15,7 +16,10 @@ class MessagesController extends Controller
      */
     public function index()
     {   
-        $message = Post::where("email_destinataire","=",Auth::user()->email)->get();
+        $message = Post::where("id_sender","=",Auth::user()->id)
+        ->orwhere("email_destinataire","=",Auth::user()->email)
+        ->orderBy("updated_at","DESC")
+        ->get();
         return view("messages",[
             "messages_dispo" => $message
         ]);

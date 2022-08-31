@@ -3,7 +3,7 @@
 @section('main-content')
 
 
-<div class="br-mailbox-list" style="transform : translateX(-30px)" >
+<div class="br-mailbox-list" style="transform : translateX(-30px);overflow-y:scroll;" >
   <div class="br-mailbox-list-header">
     <a href="#" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up">
       <i class="fa fa-arrow-right"></i>
@@ -24,12 +24,15 @@
         <div>
           <i class="icon ion-ios-star tx-warning"></i>
           <i class="icon ion-android-attach"></i>
+          <span class="tx-12 tx-gray-600 mg-b-5">
+              {{( $message->id_sender == Auth::user()->id) ? "Envoyer" : "Recu" }}
+          </span>
         </div>
         <span class="tx-12">10 hours ago</span>
       </div>
       <h6 class="tx-14 mg-b-10 tx-gray-800">{{ strlen($message->users->email) > 30 ? (substr($message->users->email,0,30)."...") : ($message->users->email)}}, me (4)</h6>
       <p class="tx-12 tx-gray-600 mg-b-5">
-          {{strlen($message->content) > 40 ? (substr($message->content,0,40)."...") : ($message->content)}} </p>
+          {{strlen($message->content) > 45 ? (substr($message->content,0,45)." ...") : ($message->content)}} </p>
     </div>
     @endforeach
     {{-- en boucle --}}
