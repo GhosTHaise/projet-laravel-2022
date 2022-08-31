@@ -3,7 +3,7 @@
 @section('main-content')
 
 
-<div class="br-mailbox-list" style="transform : translateX(-30px)" >
+<div class="br-mailbox-list" style="transform : translateX(-30px);overflow-y:scroll;" >
   <div class="br-mailbox-list-header">
     <a href="#" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up">
       <i class="fa fa-arrow-right"></i>
@@ -17,94 +17,25 @@
     </div>
   </div>
   <div class="br-mailbox-list-body" >
+    {{-- Eto no bouclena --}}
+    @foreach($messages_dispo as $message)
     <div class="br-mailbox-list-item active">
       <div class="d-flex justify-content-between mg-b-5">
         <div>
           <i class="icon ion-ios-star tx-warning"></i>
           <i class="icon ion-android-attach"></i>
+          <span class="tx-12 tx-gray-600 mg-b-5">
+              {{( $message->id_sender == Auth::user()->id) ? "Envoyer" : "Recu" }}
+          </span>
         </div>
         <span class="tx-12">10 hours ago</span>
       </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Socrates Itumay, me (4)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
+      <h6 class="tx-14 mg-b-10 tx-gray-800">{{ strlen($message->users->email) > 30 ? (substr($message->users->email,0,30)."...") : ($message->users->email)}}, me (4)</h6>
+      <p class="tx-12 tx-gray-600 mg-b-5">
+          {{strlen($message->content) > 45 ? (substr($message->content,0,45)." ...") : ($message->content)}} </p>
     </div>
-    <div class="br-mailbox-list-item unread">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">1 day ago</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Envato, me (2)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">2 days ago</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Themeforest</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">2 days ago</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Reynante Labares, me (2)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">3 days ago</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Isidore Dilao (3)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">Sep 20</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Reynante Labares, me (2)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">Sep 19</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Envato, me (2)</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
-    <div class="br-mailbox-list-item">
-      <div class="d-flex justify-content-between mg-b-5">
-        <div>
-          <i class="icon ion-ios-star"></i>
-          <i class="icon ion-android-attach"></i>
-        </div>
-        <span class="tx-12">Sep 17</span>
-      </div>
-      <h6 class="tx-14 mg-b-10 tx-gray-800">Themeforest</h6>
-      <p class="tx-12 tx-gray-600 mg-b-5">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never...</p>
-    </div>
+    @endforeach
+    {{-- en boucle --}}
   </div>
 </div>
 
