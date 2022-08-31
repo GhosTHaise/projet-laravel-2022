@@ -22,7 +22,8 @@ class MessagesController extends Controller
         ->orderBy("updated_at","DESC")
         ->get();
         return view("messages",[
-            "messages_dispo" => $message
+            "messages_dispo" => $message,
+            "mouth" => ["Jan","Fev","Mar","Avr","Mai","Jui","Jul","Aou","Sep","Oct","Nov","Dec"]
         ]);
     }
 
