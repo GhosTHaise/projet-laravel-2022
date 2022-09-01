@@ -2,12 +2,16 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResponsableAuthController;
+use App\Http\Controllers\CongeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PersonnelsController;
+use App\Http\Controllers\ResponsableController;
+use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
@@ -20,7 +24,25 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Responsable login & register Controller
+Route::get('/loginResponsable',[ResponsableAuthController::class, 'loginResponsable']);
+Route::get('/registrationResponsable',[ResponsableAuthController::class, 'registrationResponsable']);    
+Route::post('/register-responsable',[ResponsableAuthController::class, 'registerResponsable'])->name('register-responsable');
+Route::post('/login-responsable',[ResponsableAuthController::class, 'loginResponsables'])->name('login-responsable');
+//Conge Controller
+Route::get('conges',[CongeController::class, 'index'])->name('conge.index');   
+Route::get('send-forms',[CongeController::class, 'create'])->name('conge.create');
+Route::post('send-forms',[CongeController::class, 'store'])->name('conge.store');
 
+//Responsable conge view Controller
+Route::get('/validation',[CongeController::class, 'validation'])->middleware(['auth'])->name('conge.validation');
+Route::post('/validation_confimer/{id}',[CongeController::class, 'valide_conge'])->middleware(['auth'])->name('conge.validation.confirmer');
+Route::post('/validation_refuser/{id}',[CongeController::class, 'refuse_conge'])->middleware(['auth'])->name('conge.validation.refuser');
+/* Route::get('liste',[ResponsableController::class, 'liste'])->name('conge.liste');  
+Route::get('/logout',[ValidationController::class, 'logout'])->name('conge.validation'); */
+//
+
+//
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
 ->name('login');
 
@@ -33,20 +55,8 @@ Route::resource('emp', PersonnelsController::class)->middleware(['auth']);
 Route::resource('postes', PostesController::class)->middleware(['auth']);
 
 Route::resource("mailbox",MessagesController::class)->middleware(['auth']);
-//Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
 
-//Route::get('create-post', [PostsController::class, 'create'])->name('posts.create')->middleware('can:access-admin');
-
-//Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
-
-/* Route::get('/dashboard', function () {
-    return view('dashboard');
-}); */
-
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
+//dashboardController
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Poste;
 use App\Models\Personnel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PersonnelsController extends Controller
 {
@@ -33,6 +34,9 @@ class PersonnelsController extends Controller
     public function create()
     {
         //
+        if(!Gate::allows("access-admin")){
+            abort(401);
+        }
         $list_poste = Poste::all();
         return view('personnels.create',[
             "page_title" => "Nouveau personnel",

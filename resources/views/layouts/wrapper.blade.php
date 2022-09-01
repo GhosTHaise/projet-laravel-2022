@@ -97,11 +97,11 @@
             <span class="menu-item-label">CONGES</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Demander congé</a></li>
+            <li class="sub-item"><a href="{{url('conges')}}" class="sub-link">Demander congé</a></li>
             
             @can('access-admin')
-                 <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Liste congé</a></li>
-                 <li class="sub-item"><a href="card-social.html" class="sub-link">Valider congé</a></li>
+                 <li class="sub-item"><a href="{{url('liste')}}" class="sub-link">Liste congé</a></li>
+                 <li class="sub-item"><a href="{{Route('conge.validation')}}" class="sub-link">Valider congé</a></li>
             @endcan
           </ul>
         </li>

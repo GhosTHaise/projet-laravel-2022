@@ -20,9 +20,12 @@ class MessagesController extends Controller
         $message = Post::where("id_sender","=",Auth::user()->id)
         ->orwhere("email_destinataire","=",Auth::user()->email)
         ->orderBy("updated_at","DESC")
-        ->get();
+        ->get() ?? [[
+            "updated_at" => now()
+        ]];
         return view("messages",[
-            "messages_dispo" => $message
+            "messages_dispo" => $message,
+            "mouth" => ["Jan","Fev","Mar","Avr","Mai","Jui","Jul","Aou","Sep","Oct","Nov","Dec"]
         ]);
     }
 
