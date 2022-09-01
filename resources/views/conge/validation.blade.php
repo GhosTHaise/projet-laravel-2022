@@ -4,20 +4,6 @@
     <div class="row">
         <div class="col-md-10 mx-auto">
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->email}}</td>
-                            <td><a href="logout">Deconection</a></td>
-                        </tr>
-                    </tbody>
-                    </table>
                 <table id="myTable" class="table table-bordered table-stripped">
                     
                     <thead>
@@ -42,14 +28,20 @@
                                 <td>{{$item->Nom}}</td>
                                 <td>{{$item->Prenom}}</td>
                                 <td>{{$item->Email}}</td>
-                                <td>{{$item->Motif}}</td>
+                                <td>{{(strlen($item->Motif)) > 20 ? substr($item->Motif,0,20)."..." : $item->Motif}}</td>
                                 <td>{{$item->Depart}}</td>
                                 <td>{{$item->Arrive}}</td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary btn-sm">VALIDER</button>
+                                    <form action={{Route("conge.validation.confirmer",$item->id)}} method="post">
+                                        @csrf
+                                        <button type="submit"class="btn btn-primary btn-sm">VALIDER</button>
+                                    </form>
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-danger btn-sm">REFFUSER</button>
+                                    <form action={{Route("conge.validation.refuser",$item->id)}} method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">REFFUSER</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

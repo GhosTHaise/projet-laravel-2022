@@ -49,7 +49,7 @@
                             <input type="date" name="date1" id="" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Arrive</label>
+                            <label for="">Fin</label>
                             <input type="date" name="date2" id="" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">

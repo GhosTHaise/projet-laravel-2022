@@ -17,5 +17,6 @@ class Conge extends Model
         'Email',
         'Depart',
         'Arrive',
+        'status'
     ];
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Conge;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CongeController extends Controller
 {
@@ -41,6 +42,35 @@ class CongeController extends Controller
         }else{
             return back()->with('fail','something wrong');
         }    
+    }
+    public function validation()
+    {   
+        if(!Gate::allows("access-admin")){
+            abort(401);
+        }
+        $conge = Conge::all()->where("status","==","pending");
+        return view('conge.validation',compact('conge'));
+    }
+    public function valide_conge($id){
+        
+        if(!Gate::allows("access-admin")){
+            abort(401);
+        }
+        $conge = Conge::find($id);
+        $conge->update([
+            "status" => "valide"
+        ]);
+        return redirect()->route("conge.validation");
+    }
+    public function refuse_conge($id){
+        if(!Gate::allows("access-admin")){
+            abort(401);
+        }
+        $conge = Conge::find($id);
+        $conge->update([
+            "status" => "refuse"
+        ]);
+        return redirect()->route("conge.validation");
     }
 }
 ?>

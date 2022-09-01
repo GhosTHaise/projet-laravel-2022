@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Poste;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class PostesController extends Controller
 {
@@ -32,6 +33,9 @@ class PostesController extends Controller
      */
     public function create()
     {
+        if(!Gate::allows("access-admin")){
+            abort(401);
+        }
         return view('posts.create',[
             "page_title" => "Creer un poste"
         ]);

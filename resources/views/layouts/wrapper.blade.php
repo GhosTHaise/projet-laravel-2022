@@ -101,7 +101,7 @@
             
             @can('access-admin')
                  <li class="sub-item"><a href="{{url('liste')}}" class="sub-link">Liste congé</a></li>
-                 <li class="sub-item"><a href="{{url('loginResponsable')}}" class="sub-link">Valider congé</a></li>
+                 <li class="sub-item"><a href="{{Route('conge.validation')}}" class="sub-link">Valider congé</a></li>
             @endcan
           </ul>
         </li>
