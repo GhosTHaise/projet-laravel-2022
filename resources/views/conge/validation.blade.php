@@ -46,6 +46,9 @@
                             </tr>
                         @endforeach
                     </tbody>
+                    @if(count($conge) <= 0)
+                        <h4 class="ml-2">Aucune demande a afficher</h4>
+                    @endif
                 </table>
             </div>
         </div>

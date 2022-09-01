@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Conge;
 use Illuminate\Http\Request;
+use App\Mail\templateMailConge;
+use App\Mail\CongevalidationMail;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
 
 class CongeController extends Controller
 {
@@ -57,9 +60,12 @@ class CongeController extends Controller
             abort(401);
         }
         $conge = Conge::find($id);
+        
+        
         $conge->update([
             "status" => "valide"
         ]);
+        Mail::to($conge->Email)->send(new templateMailConge($conge));
         return redirect()->route("conge.validation");
     }
     public function refuse_conge($id){
@@ -70,6 +76,8 @@ class CongeController extends Controller
         $conge->update([
             "status" => "refuse"
         ]);
+        Mail::to($conge->Email)->send(new templateMailConge($conge));
+        return redirect()->route("conge.validation");
         return redirect()->route("conge.validation");
     }
 }
