@@ -28,6 +28,8 @@ class templateMailConge extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.templateconge');
+        return $this->markdown('mails.templateconge')
+        ->subject("Reponse au demande de conge")
+        ;
     }
 }

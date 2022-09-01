@@ -12,7 +12,7 @@
 
 Cordialement,<br>
 {{ config('app.name') }}
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => 'https://mail.google.com/'])
 Confimer
 @endcomponent
 @endcomponent
