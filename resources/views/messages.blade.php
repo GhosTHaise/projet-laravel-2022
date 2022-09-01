@@ -2,12 +2,11 @@
 
 @section('main-content')
 @php
-
   if(isset($actual_message)){
     $time_now = Carbon\Carbon::parse($actual_message->updated_at);
     $dernier_message_time = $mouth[(int)($time_now->format("m"))-1].$time_now->format(" d, Y h:i")."am";
   }else{
-    $time_now = Carbon\Carbon::parse($messages[0]->updated_at);
+    $time_now = Carbon\Carbon::parse($messages_dispo[0]->updated_at);
     $dernier_message_time = $mouth[(int)($time_now->format("m"))-1].$time_now->format(" d, Y h:i")."am";
   }
 @endphp
@@ -28,8 +27,10 @@
   <div class="br-mailbox-list-body" >
     {{-- Eto no bouclena --}}
     @foreach($messages_dispo as $message)
+    
     <a style="text-decoration: none" href="{{Route('mailbox.edit',$message->id)}}">
-    <div class="br-mailbox-list-item active">
+      
+    <div class="br-mailbox-list-item {{($message->id == $messages_dispo[0]->id) ? "active" : "" }}">
       <div class="d-flex justify-content-between mg-b-5">
         <div>
           <i class="icon ion-ios-star tx-warning"></i>
