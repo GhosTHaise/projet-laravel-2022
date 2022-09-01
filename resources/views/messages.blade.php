@@ -2,10 +2,11 @@
 
 @section('main-content')
 @php
-  if(isset($actual_message)){
+  
+  if(isset($actual_message->updated_at)){
     $time_now = Carbon\Carbon::parse($actual_message->updated_at);
     $dernier_message_time = $mouth[(int)($time_now->format("m"))-1].$time_now->format(" d, Y h:i")."am";
-  }else{
+  }else if (isset($messages_dispo[0]->updated_at)) {
     $time_now = Carbon\Carbon::parse($messages_dispo[0]->updated_at);
     $dernier_message_time = $mouth[(int)($time_now->format("m"))-1].$time_now->format(" d, Y h:i")."am";
   }
@@ -72,14 +73,16 @@
   <div class="br-msg-header d-flex justify-content-between">
     <div class="media align-items-center">
       <img src={{asset("storage/account.png")}} class="wd-40 rounded-circle" alt="">
+      @if(isset($messages_dispo))
       <div class="media-body mg-l-10">
-        <p class="tx-inverse tx-medium mg-b-0">{{ isset($actual_message) ? ($actual_message->users->email) : ($messages_dispo[0]->users->email)}}</p>
+        <p class="tx-inverse tx-medium mg-b-0">{{ isset($actual_message) ? ($actual_message->users->email) : ( isset($messages_dispo[0]) ? $messages_dispo[0]->users->email : " Auncun Message a afficher")}}</p>
         <p class="tx-12 mg-b-0">
-          <span>{{$dernier_message_time}}</span>
+          <span>{{$dernier_message_time ?? ""}}</span>
           <a href="#" class="mg-l-5 tx-gray-500"><i class="icon ion-star"></i></a>
           <a href="#" class="mg-l-5 tx-gray-500"><i class="icon ion-android-attach"></i></a>
         </p>
       </div>
+      @endif
     </div>
     <nav class="nav nav-inline tx-size-24 mg-b-0 lh-0">
       <a href="#" class="nav-link tx-gray-light hover-inverse pd-x-5"><i class="icon ion-reply"></i></a>
@@ -91,14 +94,17 @@
       </a>
     </nav>
   </div>
+  @if(isset($messages_dispo[0]))
   <div class="br-msg-body">
+    
     <h6 class="tx-inverse mg-b-25 lh-4">Objet : {{ isset($actual_message) ? ($actual_message->objet) : ($messages_dispo[0]->objet)}}</h6>
 
     <p>Bonjour , {{ isset($destinataire) ? ($destinataire) : ""}}</p>
 
     <p style="overflow-wrap: anywhere">{{ isset($actual_message) ? ($actual_message->content) : ($messages_dispo[0]->content)}}</p>
    
-    <p>Cordialement,<br>{{ isset($actual_message) ? ($actual_message->users->name) : ($messages_dispo[0]->users->name)}}</p>
+    <p>Cordialement,<br>{{ isset($actual_message) ? ($actual_message->users->name) : ($messages_dispo[0]->users->name)}}</p>)}
+    
   </div>
 
   <div class="pd-x-30 pd-b-30">
@@ -117,6 +123,7 @@
       </div>
     </div>
   </div>
+  @endif
 
   <div id="modalCompose" class="modal fade">
     <div class="modal-dialog modal-lg" role="document">
