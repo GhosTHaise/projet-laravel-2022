@@ -103,7 +103,7 @@
 
     <p style="overflow-wrap: anywhere">{{ isset($actual_message) ? ($actual_message->content) : ($messages_dispo[0]->content)}}</p>
    
-    <p>Cordialement,<br>{{ isset($actual_message) ? ($actual_message->users->name) : ($messages_dispo[0]->users->name)}}</p>)}
+    <p>Cordialement,<br>{{ isset($actual_message) ? ($actual_message->users->name) : ($messages_dispo[0]->users->name)}}</p>
     
   </div>
 
