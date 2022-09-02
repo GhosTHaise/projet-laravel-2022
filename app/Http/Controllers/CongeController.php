@@ -78,7 +78,6 @@ class CongeController extends Controller
         ]);
         Mail::to($conge->Email)->send(new templateMailConge($conge));
         return redirect()->route("conge.validation");
-        return redirect()->route("conge.validation");
     }
 }
 ?>
