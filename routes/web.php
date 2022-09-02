@@ -24,11 +24,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Responsable login & register Controller
-Route::get('/loginResponsable',[ResponsableAuthController::class, 'loginResponsable']);
-Route::get('/registrationResponsable',[ResponsableAuthController::class, 'registrationResponsable']);    
-Route::post('/register-responsable',[ResponsableAuthController::class, 'registerResponsable'])->name('register-responsable');
-Route::post('/login-responsable',[ResponsableAuthController::class, 'loginResponsables'])->name('login-responsable');
+
 //Conge Controller
 Route::get('conges',[CongeController::class, 'index'])->name('conge.index');   
 Route::get('send-forms',[CongeController::class, 'create'])->name('conge.create');

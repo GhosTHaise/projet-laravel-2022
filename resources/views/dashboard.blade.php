@@ -91,8 +91,8 @@
         <div class="card bd-0 shadow-base">
           <div class="d-md-flex justify-content-between pd-25">
             <div>
-              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">How Engaged Our Users Daily</h6>
-              <p>Past 30 Days — Last Updated Oct 14, 2017</p>
+              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Stats</h6>
+              <p>30 derniers jours — dernier update 2 Sep, 2022</p>
             </div>
             <div class="d-sm-flex">
               <div>
@@ -121,8 +121,8 @@
         <div class="card bd-0 shadow-base pd-25 mg-t-20">
           <div class="d-md-flex justify-content-between">
             <div>
-              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">How Engaged Our Users Daily</h6>
-              <p>Past 30 Days — Last Updated Oct 14, 2017</p>
+              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Comment nos utilisateurs sont-ils engagés au quotidien ?</h6>
+              <p>30 derniers jours — dernier update  2 Sep, 2022</p>
             </div>
             <div class="wd-200">
               <select class="form-control select2" data-placeholder="Choose location">
@@ -165,24 +165,24 @@
 
         <div class="card shadow-base bd-0 overflow-hidden">
           <div class="pd-x-25 pd-t-25">
-            <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1 mg-b-20">Storage Overview</h6>
-            <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase mg-b-0">As of Today</p>
-            <h1 class="tx-56 tx-light tx-inverse mg-b-0">755<span class="tx-teal tx-24">gb</span></h1>
-            <p><span class="tx-primary">80%</span> of free space remaining</p>
+            <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1 mg-b-20">Stockage</h6>
+            <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase mg-b-0">Aujourd'hui</p>
+            <h1 class="tx-56 tx-light tx-inverse mg-b-0">7<span class="tx-teal tx-24">gb</span></h1>
+            <p><span class="tx-primary">75%</span> d'espace libre</p>
           </div><!-- pd-x-25 -->
           <div id="ch6" class="ht-115 mg-r--1"></div>
           <div class="bg-teal pd-x-25 pd-b-25 d-flex justify-content-between">
             <div class="tx-center">
-              <h3 class="tx-lato tx-white mg-b-5">989<span class="tx-light op-8 tx-20">gb</span></h3>
-              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Total Space</p>
+              <h3 class="tx-lato tx-white mg-b-5">98<span class="tx-light op-8 tx-20">gb</span></h3>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Espace totale</p>
             </div>
             <div class="tx-center">
-              <h3 class="tx-lato tx-white mg-b-5">234<span class="tx-light op-8 tx-20">gb</span></h3>
-              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Used Space</p>
+              <h3 class="tx-lato tx-white mg-b-5">23<span class="tx-light op-8 tx-20">gb</span></h3>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Espace Utilise</p>
             </div>
             <div class="tx-center">
-              <h3 class="tx-lato tx-white mg-b-5">80<span class="tx-light op-8 tx-20">%</span></h3>
-              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Free Space</p>
+              <h3 class="tx-lato tx-white mg-b-5">75<span class="tx-light op-8 tx-20">%</span></h3>
+              <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase mg-b-0 tx-white-8">Espace libre</p>
             </div>
           </div>
         </div><!-- card -->
@@ -200,11 +200,11 @@
                     <a href="#" class="tx-gray-500 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
                   </div>
                   <div class="pd-x-30 pd-t-30 mg-b-auto">
-                    <p class="tx-info tx-uppercase tx-11 tx-semibold tx-mont mg-b-5">Product Item #1</p>
-                    <h5 class="tx-inverse mg-b-20">Samsung Galaxy S8</h5>
-                    <p class="tx-uppercase tx-11 tx-semibold tx-mont mg-b-0">Purchases</p>
-                    <h2 class="tx-inverse tx-lato tx-bold mg-b-0">2366</h2>
-                    <span>53.86 purchases/month</span>
+                    <p class="tx-info tx-uppercase tx-11 tx-semibold tx-mont mg-b-5">Nos produits</p>
+                    <h5 class="tx-inverse mg-b-20">Acer Nitro</h5>
+                    <p class="tx-uppercase tx-11 tx-semibold tx-mont mg-b-0">Ventes</p>
+                    <h2 class="tx-inverse tx-lato tx-bold mg-b-0">668</h2>
+                    <span>20 ventes/mois</span>
                   </div>
                   <div id="ch10" class="ht-100 tr-y-1"></div>
                 </div><!-- d-flex -->
@@ -215,11 +215,11 @@
                     <a href="#" class="tx-gray-500 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
                   </div>
                   <div class="pd-x-30 pd-t-30 mg-b-auto">
-                    <p class="tx-info tx-uppercase tx-11 tx-semibold tx-mont mg-b-5">Product Item #2</p>
-                    <h5 class="tx-inverse mg-b-20">Apple iPhone 8 Plus</h5>
-                    <p class="tx-uppercase tx-11 tx-semibold tx-mont mg-b-0">Purchases</p>
-                    <h2 class="tx-inverse tx-lato tx-bold mg-b-0">5632</h2>
-                    <span>120.44 purchases/month</span>
+                    <p class="tx-info tx-uppercase tx-11 tx-semibold tx-mont mg-b-5">Nos produits</p>
+                    <h5 class="tx-inverse mg-b-20">Asus Zenbook 2</h5>
+                    <p class="tx-uppercase tx-11 tx-semibold tx-mont mg-b-0">Ventes</p>
+                    <h2 class="tx-inverse tx-lato tx-bold mg-b-0">321</h2>
+                    <span>11 ventes/mois</span>
                   </div>
                   <div id="ch11" class="ht-100 tr-y-1"></div>
                 </div><!-- d-flex -->
@@ -231,7 +231,7 @@
         <div class="card card-body bd-0 pd-25 bg-primary mg-t-20">
           <div class="d-xs-flex justify-content-between align-items-center tx-white mg-b-20">
             <h6 class="tx-13 tx-uppercase tx-semibold tx-spacing-1 mg-b-0">Server Status</h6>
-            <span class="tx-12 tx-uppercase">Oct 2017</span>
+            <span class="tx-12 tx-uppercase">Sep 2022</span>
           </div>
           <p class="tx-sm tx-white tx-medium mg-b-0">Hardware Monitoring</p>
           <p class="tx-12 tx-white-7">Intel Dothraki G125H 2.5GHz</p>

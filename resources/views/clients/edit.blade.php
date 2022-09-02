@@ -22,7 +22,7 @@
             </div><!-- col -->
         </div><!-- row -->
         <div class="row mt-2 mx-auto">
-            <button type="submit" class="btn btn-success">Mettre à jour le personnel</button>
+            <button type="submit" class="btn btn-success">Mettre à jour le client</button>
         </div>
      </form>
     </div>

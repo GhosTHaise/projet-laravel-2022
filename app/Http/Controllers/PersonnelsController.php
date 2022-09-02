@@ -91,8 +91,12 @@ class PersonnelsController extends Controller
     public function edit($id)
     {
         //
+        $list_poste = Poste::all();
         $personnels = Personnel::find($id);
-        return view('personnels.edit',compact('personnels'));
+        return view('personnels.edit',[
+            "personnels" => $personnels,
+            "postes" => $list_poste
+        ]);
     }
 
     /**
@@ -108,7 +112,7 @@ class PersonnelsController extends Controller
         $emp = Personnel::find($id);
 
         $nom =  $request->nom;
-        $poste_id =  $request->poste_id;
+        $poste_id =  $request->poste;
 
         $emp->update(['nom' => $nom, 'poste_id' => $poste_id]);
 
